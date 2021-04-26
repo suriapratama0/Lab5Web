@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Validasi dari Javascript</title>
+</head>
+<body>
+  <fieldset>
+    <legend>
+      <h2 style="padding: 40px 5px;" >Validasi Pendaftaran</h2>  
+    </legend>
+    <br/>
+    <form method="post" onSubmit="return validasi_data(this)">
+      <table style="width: 350px;">
+        <tr>
+          <th style="text-align: left;">Masukkan Nama</th>
+          <td>:</td>
+          <td><input type="text" name="nama" id="nama"></td>
+        </tr>
+        <tr>
+          <th style="text-align: left;">Jenis Kelamin</th>
+          <td>:</td>
+          <td><input type="radio" name="jeniskelamin" value="L" id="jeniskelaminl">Laki-laki
+            <input type="radio" name="jeniskelamin" value="P" id="jeniskelaminp">Perempuan</td>
+          </tr>
+          <tr>
+            <th style="text-align: left;">Tempat Lahir</th>
+            <td>:</td>
+            <td><input type="text" name="tempat" id="tempat"></td>
+          </tr>
+          <tr>
+            <th style="text-align: left;">Tahun Lahir</th>
+            <td>:</td>
+            <td><input type="date" name="tgl" id="tgl"></td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center; height: 45px;"><input type="submit" value="Register"></td>
+          </tr>
+        </table>
+      </form>
+    </fieldset>
+    <script>
+      function validasi_data(form) {  
+        if (form.nama.value=="") {
+          alert('nama  harus di isi !');
+          form.nama.focus();
+          return false;
+        }else if(form.jeniskelamin.value=="") {
+          alert('Jenis Kelamin harus di isi !');
+          form.jeniskelamin.focus();
+          return false;
+        }else if(form.tempat.value=="") {
+          alert('Tempat Lahir harus di isi !');
+          form.tempat.focus();
+          return false;
+        }else if(form.tgl.value=="") {
+          alert('Tahun Lahir harus di isi !');
+          form.tgl.focus();
+          return false;
+        }
+      }
+    </script>
+  </body>
+  </html>
